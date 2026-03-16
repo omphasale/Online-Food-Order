@@ -2,14 +2,12 @@ FROM node:21
 
 WORKDIR /app
 
+COPY package*.json ./
+
+RUN npm install
+
 COPY . .
 
-RUN npm i
-
-COPY .env.sample .env
-
-EXPOSE 8000
+EXPOSE 3000
 
 CMD ["npm", "start"]
-
-
